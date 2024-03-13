@@ -1,0 +1,19 @@
+# /_data/authors.yml
+
+nauss:
+  name             : "Thomas Nauss"
+  avatar           : "/assets/images/nauss.jpg"
+  email            : "nauss@geo.uni-marburg.de"
+  home             : "https://www.uni-marburg.de/de/fb19/disciplines/physisch/umweltinformatik/umweltinformatik"
+reudenbach:
+  name             : "Chris Reudenbach"
+  avatar           : "/assets/images/reudenbach.jpg"
+  email            : "reudenbach@uni-marburg.de"
+zeuss:
+  name             : "Dirk Zeuss"
+  avatar           : "/assets/images/zeuss.jpg"
+  email            : "dirk.zeuss@uni-marburg.de"
+temesgen:
+  name             : "Temesgen Abera"
+  avatar           : "/assets/images/ludwig.jpg"
+  email            : "temesgen.abera@geo.uni-marburg.de"
