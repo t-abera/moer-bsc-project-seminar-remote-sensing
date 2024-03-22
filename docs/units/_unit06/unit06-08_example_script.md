@@ -10,7 +10,7 @@ Example workflow:
 
 ```yaml
 
-library(raster)
+library(terra)
 library(ranger)
 library(caret)
 library(RStoolbox)
@@ -19,12 +19,12 @@ library(viridis)
 
 # Prepared Sentinel 2 Scene
 
-sen = stack("data/sentinel/lahntal_sentinel_NDVI.tif")
+sen = rast("data/sentinel/lahntal_sentinel_NDVI.tif")
 names(sen) <- c("B2", "B3", "B4", "B8", "NDVI")
 
 # Prepared Mean vegetation height (mvh) from Lidar
 
-mvh = raster("data/lidar/mvh.tif")
+mvh = rast("data/lidar/mvh.tif")
 
 # Terminolgy: 
 ## sentinel bands are the predictors
@@ -32,10 +32,10 @@ mvh = raster("data/lidar/mvh.tif")
 
 # combine mhv with the sentinel bands and convert to a data frame
 
-dset <- stack(crop(sen, mvh), mvh)
-plot(dset)
+cset <- c(crop(sen, mvh), mvh)
+plot(cset)
 
-dset <- as.data.frame(dset)
+dset <- as.data.frame(cset)
 
 
 # one row of dset was one cell of the raster, the columns were the different layers of the stack
@@ -80,7 +80,7 @@ rfmodel <- caret::train(mvh ~ ., data = train_df, method = "ranger",
 # visual validation
 
 # predict on Sentinel
-p <- raster::predict(object = sen, rfmodel)
+p <- raster::predict(object = csen, rfmodel)
 plot(p)
 
 # independent validation

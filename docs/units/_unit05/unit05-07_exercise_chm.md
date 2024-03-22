@@ -18,7 +18,7 @@ We already learned that it is possible to derive a DEM from LiDAR data by filter
 What attribute of the LAS file could we use to create the DSM?
 
 Of course, we eventually need some sort of grid to rasterize the pointcloud.
-Of course `lidR` provides the functions for these tasks. Have a look at `grid_terrain()`, `grid_canopy()` or the more flexible `grid_metrics()`.
+Of course `lidR` provides the functions for these tasks. Have a look at `rasterize_terrain()` and `rasterize_canopy()`.
 
 Tasks:
 * Calculate a DEM, DSM and CHM with a 1 m resolution
@@ -34,8 +34,8 @@ Tasks:
 
 * Load the first layer of the cropped Lahntal Sentinel-2 scene
 * Crop the layer with the extent of the LiDAR pointcloud
-* Calculate a DEM with the Sentinel tile as a grid template with `grid_metrics()`
-* Normalize the pointcloud with `lasnormalize()`. What happened?
+* Calculate a DEM with the Sentinel tile as a grid template with `rasterize_terrain()`
+* Normalize the pointcloud with `normalize_height()`. What happened?
 * Calculate the mean vegetation height for each pixel
 * Save the mean vegetation height as a tif file
 * Plot the mean vegetation height as overlay to the Lahntal sentinel scene

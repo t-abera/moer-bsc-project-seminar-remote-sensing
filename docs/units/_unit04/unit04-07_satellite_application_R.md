@@ -19,7 +19,7 @@ As a start, load in your prepared Sentinel stack from Lahntal from the previous 
 
 ## Water bodies
 
-* Divide your NDVI layer into two groups: water and everything else. You can use the `raster::reclassify` function.
+* Divide your NDVI layer into two groups: water and everything else. You can use the `terra::classify` function.
 * Now it is just a matter of counting pixels to find out the area of water bodies.
 
 ## Assignment

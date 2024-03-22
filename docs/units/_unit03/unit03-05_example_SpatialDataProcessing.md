@@ -64,7 +64,7 @@ Secondly, we add some vector data to our working environment. For example the ad
 
 
 ```r
-fra <- getData('GADM', country='FRA', level=0)
+fra <- geodata::gadm('GADM', country='FRA', level=0)
 ```
 
 Fortunately, also these downloaded data already have a defined CRS:

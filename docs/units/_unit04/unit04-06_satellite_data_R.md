@@ -18,7 +18,7 @@ title: "Learning by Doing: Sentinel-2 Preparation"
 
 ## Data preparation 2
 
-* Get the administrative borders of Germany with the `raster::getData()` function. Make sure you download the minor administrative boarders with the argument `level = 4`.
+* Get the administrative borders of Germany with the `geodata::gadm()` function. Make sure you download the minor administrative boarders with the argument `level = 4`.
 * Subset the downloaded administrative borders to the "Landkreis Lahntal". **Hint:** you have to search for "Lahntal" in the column "NAME_4" of the attribute table of the polygons.
 * Print the projections of both the raster stack and the border of Lahntal. Which step do you suggest next?
 
@@ -32,7 +32,7 @@ If you plot your polygon it should look like this:
 
 ## Data preparation 3
 
-* Buffer the polygon of Lahntal by 4 km. You find a buffer function in the `rgeos` package.
+* Buffer the polygon of Lahntal by 4 km. You find a buffer function in the `terra` package.
 * Crop the sentinel stack with the buffered polygon.
 * To see if everything worked fine, plot the first layer of your stack.
 * Save the cropped stack as a tif file.
